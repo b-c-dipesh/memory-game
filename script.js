@@ -1,4 +1,5 @@
 const gameContainer = document.getElementById('game');
+const startGameBtn = document.querySelector('.start-game-btn');
 
 const COLORS = [
 	'red',
@@ -115,6 +116,11 @@ function handleCardClick(event) {
 }
 
 // when the DOM loads
-createDivsForColors(shuffledColors);
+// createDivsForColors(shuffledColors);
+
+// start the game when the button clicks.
+startGameBtn.addEventListener('click', () => {
+	createDivsForColors(shuffledColors);
+});
 
 /* */
