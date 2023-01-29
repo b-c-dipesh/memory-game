@@ -1,5 +1,8 @@
+const h1 = document.querySelector('h1');
 const gameContainer = document.getElementById('game');
 const startGameBtn = document.querySelector('.start-game-btn');
+const restartGameBtn = document.querySelector('.restart-game-btn');
+const scoreCounter = document.querySelector('.score-counter');
 
 const COLORS = [
 	'red',
@@ -67,6 +70,7 @@ function createDivsForColors(colorArray) {
 // TODO: Implement this function!
 let prevCard = '';
 let counter = 0;
+let score = 0;
 let matchedCards = [];
 
 function handleCardClick(event) {
@@ -96,8 +100,16 @@ function handleCardClick(event) {
 						counter = 0;
 						matchedCards.push(prevCard.dataset.id);
 						matchedCards.push(currentCard.dataset.id);
+						scoreCounter.innerText = ++score;
 						console.log('matched');
 						console.log(matchedCards);
+
+						// check if game has ended notify and display a button to restart the game.
+						if (score === 5) {
+							restartGameBtn.style.display = 'block';
+							startGameBtn.style.display = 'none';
+							h1.innerText = 'Game Ended';
+						}
 					} else {
 						counter = 1;
 					}
@@ -118,9 +130,23 @@ function handleCardClick(event) {
 // when the DOM loads
 // createDivsForColors(shuffledColors);
 
-// start the game when the button clicks.
+// start the game.
 startGameBtn.addEventListener('click', () => {
 	createDivsForColors(shuffledColors);
 });
 
+// restart the game.
+restartGameBtn.addEventListener('click', () => {
+	gameContainer.innerHTML = '';
+
+	createDivsForColors(shuffledColors);
+	prevCard = '';
+	counter = 0;
+	score = 0;
+	matchedCards = [];
+	restartGameBtn.style.display = 'none';
+	startGameBtn.style.display = 'none';
+	h1.innerText = 'Memory Game';
+	scoreCounter.innerText = 0;
+});
 /* */

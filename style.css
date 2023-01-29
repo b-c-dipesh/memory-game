@@ -8,6 +8,10 @@ header {
 	font-size: 5rem;
 }
 
+.restart-game-btn {
+	display: none;
+}
+
 #game div {
 	border: 1px solid black;
 	width: 15%;
