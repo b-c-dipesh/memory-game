@@ -137,8 +137,11 @@ startGameBtn.addEventListener('click', () => {
 
 // restart the game.
 restartGameBtn.addEventListener('click', () => {
+	// clear the gamecontainer div.
 	gameContainer.innerHTML = '';
 
+	// reshuffle colors.
+	shuffledColors = shuffle(COLORS);
 	createDivsForColors(shuffledColors);
 	prevCard = '';
 	counter = 0;
