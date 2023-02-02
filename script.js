@@ -158,6 +158,9 @@ function handleCardClick(event) {
 // start the game.
 startGameBtn.addEventListener('click', () => {
 	createDivsForColors(shuffledColors);
+
+	// disable button until game is finished
+	startGameBtn.disabled = true;
 });
 
 // restart the game.
