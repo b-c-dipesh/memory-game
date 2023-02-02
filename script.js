@@ -17,6 +17,24 @@ const COLORS = [
 	'purple',
 ];
 
+const FUNNY_REACTIONS = [
+	'Wumbo',
+	'Blubber',
+	'Flibbertigibbet',
+	'Skedaddle',
+	'Rigmarole',
+	'Rigmarole',
+	'Fiddle-faddle',
+	'Skullduggery',
+	'Hocus-pocus',
+	'Hooligan',
+	'Hanky-panky',
+	'Hoodwink',
+	'Hocuspocus',
+	'Flibberty-gibbet',
+	'Skulduggery',
+];
+
 // here is a helper function to shuffle an array
 // it returns the same array with values shuffled
 // it is based on an algorithm called Fisher Yates if you want to research more
@@ -65,6 +83,12 @@ function createDivsForColors(colorArray) {
 
 		++counter;
 	}
+}
+
+function getFunnyReaction() {
+	const reaction = Math.floor(Math.random() * FUNNY_REACTIONS.length);
+
+	return FUNNY_REACTIONS[reaction];
 }
 
 // TODO: Implement this function!
@@ -117,6 +141,7 @@ function handleCardClick(event) {
 				// if the second card doesn't match the first reset the cards after 1s and reset the counter.
 				else {
 					setTimeout(() => {
+						h1.innerText = getFunnyReaction();
 						prevCard.style.backgroundColor = '';
 						currentCard.style.backgroundColor = '';
 						counter = 0;
