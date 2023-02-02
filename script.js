@@ -91,7 +91,6 @@ function getFunnyReaction() {
 	return FUNNY_REACTIONS[reaction];
 }
 
-// TODO: Implement this function!
 let prevCard = '';
 let counter = 0;
 let score = 0;

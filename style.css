@@ -11,12 +11,27 @@ header {
 	justify-content: space-around;
 }
 
+.banner {
+	background-color: lightgray;
+	border-radius: 1rem;
+	color: black;
+	margin: 2rem 0;
+	padding: 0.5rem 1rem;
+	box-shadow: 0.9rem 0.9rem;
+}
+
 h1,
 .score {
 	font-style: italic;
 	font-size: 5rem;
 	font-weight: bold;
-	text-shadow: 0.1rem 0.4rem black;
+}
+
+.score-counter {
+	display: inline-block;
+	font-style: italic;
+	font-size: 5rem;
+	font-weight: bold;
 }
 
 .start-game-btn,
