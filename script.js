@@ -132,7 +132,8 @@ function handleCardClick(event) {
 						if (score === 5) {
 							restartGameBtn.style.display = 'block';
 							startGameBtn.style.display = 'none';
-							h1.innerText = 'Game Ended';
+							h1.innerText = 'YOU WON!!';
+							startGameBtn.disabled = false;
 						}
 					} else {
 						counter = 1;
@@ -176,8 +177,9 @@ restartGameBtn.addEventListener('click', () => {
 	score = 0;
 	matchedCards = [];
 	restartGameBtn.style.display = 'none';
-	startGameBtn.style.display = 'none';
+	startGameBtn.style.display = 'block';
 	h1.innerText = 'Memory Game';
 	scoreCounter.innerText = 0;
+	startGameBtn.disabled = true;
 });
 /* */
